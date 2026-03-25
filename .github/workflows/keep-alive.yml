@@ -12,4 +12,7 @@ jobs:
     steps:
       - name: Ping Supabase
         run: |
-          curl -s https://ftvnkjlrqkkypxdqcchv.supabase.co/rest/v1/
+          curl -s \
+            -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}" \
+            https://ftvnkjlrqkkypxdqcchv.supabase.co/rest/v1/
